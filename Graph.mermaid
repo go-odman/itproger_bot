@@ -1,0 +1,28 @@
+graph TB
+    TG[Telegram API] --> TB[Telegram Bot]
+    TB --> BM[Bot Main Module]
+    
+    BM --> HR[Handlers Registry]
+    BM --> SR[Services Registry]
+    
+    HR --> SH[Start Handler]
+    HR --> GH[Help Handler]
+    HR --> AH[Articles Handler]
+    HR --> LH[Search Handler]
+    
+    SR --> GM[Global State Manager]
+    SR --> AI[Articles Interface]
+    SR --> DB[Data Parser]
+    
+    AI --> LS[Local Storage]
+    AI --> OF[Output Formatter]
+    
+    GM --> PE[Pagination Engine]
+    
+    DB --> SQL[Site Parser Layer]
+    
+    LS --> QW[Queue Watcher]
+    
+    style AI fill:#e1f5fe
+    style GM fill:#f3e5f5
+    style DB fill:#e8f5e8
